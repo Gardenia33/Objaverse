@@ -335,7 +335,7 @@ def handle_missing_object(
 
 def get_example_objects() -> pd.DataFrame:
     """Returns a DataFrame of example objects to use for debugging."""
-    return pd.read_json("/home/gardenia/Desktop/models_test.json", orient="records")
+    return pd.read_json("/contents/models_test.json", orient="records")
 
 
 def render_objects(
