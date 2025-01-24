@@ -335,11 +335,11 @@ def handle_missing_object(
 
 def get_example_objects() -> pd.DataFrame:
     """Returns a DataFrame of example objects to use for debugging."""
-    return pd.read_json("/contents/models_test.json", orient="records")
+    return pd.read_json("/content/models_test.json", orient="records")
 
 
 def render_objects(
-    render_dir: str = "/shared_folder",
+    render_dir: str = "/content/images",
     download_dir: Optional[str] = None,
     num_renders: int = 12,
     processes: Optional[int] = None,
