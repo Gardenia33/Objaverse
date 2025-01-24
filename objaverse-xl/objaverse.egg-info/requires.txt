@@ -1,0 +1,10 @@
+fsspec>=2022.11.0
+gputil==1.4.0
+loguru
+pandas
+pyarrow
+requests
+tqdm
+
+[s3]
+s3fs==0.4.2
