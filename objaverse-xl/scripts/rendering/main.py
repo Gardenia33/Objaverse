@@ -156,10 +156,9 @@ def handle_found_object(
         # check that the renders were saved successfully
         png_files = glob.glob(os.path.join(target_directory, "*.png"))
         metadata_files = glob.glob(os.path.join(target_directory, "*.json"))
-        npy_files = glob.glob(os.path.join(target_directory, "*.npy"))
+        # npy_files = glob.glob(os.path.join(target_directory, "*.npy"))
         if (
             (len(png_files) != num_renders)
-            or (len(npy_files) != num_renders)
             or (len(metadata_files) != 1)
         ):
             logger.error(
@@ -335,17 +334,17 @@ def handle_missing_object(
 
 def get_example_objects() -> pd.DataFrame:
     """Returns a DataFrame of example objects to use for debugging."""
-    return pd.read_json("/content/for_modify_stl/output_hash.json", orient="records")
+    return pd.read_json("/content/drive/MyDrive/Lab/fusion360_1703.json", orient="records")
 
 
 def render_objects(
-    render_dir: str = "/content/images",
+    render_dir: str = "/content/drive/MyDrive/Lab/images",
     download_dir: Optional[str] = None,
-    num_renders: int = 12,
+    num_renders: int = 8,
     processes: Optional[int] = None,
     save_repo_format: Optional[Literal["zip", "tar", "tar.gz", "files"]] = None,
     only_northern_hemisphere: bool = False,
-    render_timeout: int = 300,
+    render_timeout: int = 100,
     gpu_devices: Optional[Union[int, List[int]]] = None,
 ) -> None:
     """Renders objects in the Objaverse-XL dataset with Blender
