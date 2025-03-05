@@ -565,7 +565,9 @@ def apply_single_random_color_to_all_objects() -> Tuple[float, float, float, flo
         Tuple[float, float, float, float]: The random color that was applied to all
         objects.
     """
-    rand_color = _get_random_color()
+    # modify_color
+    # rand_color = _get_random_color()
+    rand_color = [0,0,1,1]
     for obj in bpy.context.scene.objects:
         if obj.type == "MESH":
             _apply_color_to_object(obj, rand_color)
@@ -852,9 +854,10 @@ def render_object(
         bpy.ops.render.render(write_still=True)
 
         # save camera RT matrix
-        rt_matrix = get_3x4_RT_matrix_from_blender(camera)
-        rt_matrix_path = os.path.join(output_dir, f"{i:03d}.npy")
-        np.save(rt_matrix_path, rt_matrix)
+        # modify 取消保存npy
+        # rt_matrix = get_3x4_RT_matrix_from_blender(camera)
+        # rt_matrix_path = os.path.join(output_dir, f"{i:03d}.npy")
+        # np.save(rt_matrix_path, rt_matrix)
 
 
 if __name__ == "__main__":
@@ -886,7 +889,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--num_renders",
         type=int,
-        default=12,
+        default=8,
         help="Number of renders to save of the object.",
     )
     argv = sys.argv[sys.argv.index("--") + 1 :]
