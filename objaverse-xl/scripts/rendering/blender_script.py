@@ -567,7 +567,7 @@ def apply_single_random_color_to_all_objects() -> Tuple[float, float, float, flo
     """
     # modify_color
     # rand_color = _get_random_color()
-    rand_color = [0,0,1,1]
+    rand_color = [0.8,0.8,0.8,1]
     for obj in bpy.context.scene.objects:
         if obj.type == "MESH":
             _apply_color_to_object(obj, rand_color)
