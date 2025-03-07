@@ -582,10 +582,10 @@ def set_camera(num_renders, i, radius, only_northern_hemisphere=False) -> bpy.ty
     y = radius * math.sin(theta) * math.sin(phi)
     z = radius * math.cos(theta)
 
-    if(z < -2):
-        z = -2
-    if(z > 2):
-        z = 2
+    # if(z < -2):
+        # z = -2
+    # if(z > 2):
+        # z = 2
     # only positive z
     if only_northern_hemisphere:
         z = abs(z)
@@ -846,7 +846,7 @@ def render_object(
         #    only_northern_hemisphere=only_northern_hemisphere,
        # )
 
-        camera = set_camera(num_renders, i, 3.2, False)
+        camera = set_camera(num_renders, i, 3.6, False)
 
         # render the image
         render_path = os.path.join(output_dir, f"{i:03d}.png")
