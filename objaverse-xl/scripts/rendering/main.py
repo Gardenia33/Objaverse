@@ -334,17 +334,17 @@ def handle_missing_object(
 
 def get_example_objects() -> pd.DataFrame:
     """Returns a DataFrame of example objects to use for debugging."""
-    return pd.read_json("/content/drive/MyDrive/Lab/fusion360_1703.json", orient="records")
+    return pd.read_json("/content/drive/MyDrive/Lab/cad_json2stl_8052.json", orient="records")
 
 
 def render_objects(
-    render_dir: str = "/content/drive/MyDrive/Lab/images",
+    render_dir: str = "/content/drive/MyDrive/multiview_images",
     download_dir: Optional[str] = None,
     num_renders: int = 8,
     processes: Optional[int] = None,
     save_repo_format: Optional[Literal["zip", "tar", "tar.gz", "files"]] = None,
     only_northern_hemisphere: bool = False,
-    render_timeout: int = 100,
+    render_timeout: int = 3000,
     gpu_devices: Optional[Union[int, List[int]]] = None,
 ) -> None:
     """Renders objects in the Objaverse-XL dataset with Blender
