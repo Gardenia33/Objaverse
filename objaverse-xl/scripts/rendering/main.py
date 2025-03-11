@@ -334,11 +334,11 @@ def handle_missing_object(
 
 def get_example_objects() -> pd.DataFrame:
     """Returns a DataFrame of example objects to use for debugging."""
-    return pd.read_json("/content/drive/MyDrive/Lab/cad_json2stl_8052.json", orient="records")
+    return pd.read_json("/content/for_modify_stl/output_hash.json", orient="records")
 
 
 def render_objects(
-    render_dir: str = "/content/drive/MyDrive/multiview_images",
+    render_dir: str = "/content/images/renders/",
     download_dir: Optional[str] = None,
     num_renders: int = 8,
     processes: Optional[int] = None,
