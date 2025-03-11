@@ -338,7 +338,7 @@ def get_example_objects() -> pd.DataFrame:
 
 
 def render_objects(
-    render_dir: str = "/content/images/renders/",
+    render_dir: str = "/content/images",
     download_dir: Optional[str] = None,
     num_renders: int = 8,
     processes: Optional[int] = None,
